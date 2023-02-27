@@ -3,13 +3,12 @@ import java.util.Iterator;
 
 
 public class Homework6 {
-    // Develop a program that mimics the behavior of a HashSet collection.
-    // In the program, create an add method that adds an element, the toString method
-    // returning a string with set elements and a method that allows
-    // read elements by index. The data format is Integer.
 
     public static void main(String[] args) {
-        
+        // Develop a program that mimics the behavior of a HashSet collection.
+        // In the program, create an add method that adds an element, the toString method
+        // returning a string with set elements and a method that allows
+        // read elements by index. The data format is Integer.
         MyHashSet myHashSet = new MyHashSet();
 
         myHashSet.add(1);
@@ -19,8 +18,11 @@ public class Homework6 {
 
         System.out.println(myHashSet);  // 1 37 6 
 
-        System.out.println(myHashSet.readElementsByIndex(9));  // default
-        System.out.println(myHashSet.readElementsByIndex(37));  // Object hash 36f0f1be
+        for (int i = 0; i < myHashSet.size(); i++) {
+            System.out.println(myHashSet.readElementsByIndex(i));
+            
+        }
+
 
     }
 
@@ -47,6 +49,10 @@ class MyHashSet {
     }
     
     public Object readElementsByIndex(Integer i) {
-        return map.getOrDefault(i, "default");
+        return map.keySet().toArray()[i];
+    }
+
+    public Integer size() {
+        return map.keySet().size();
     }
 }
