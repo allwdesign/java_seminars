@@ -23,10 +23,7 @@ public class Homework6 {
             System.out.println(myHashSet.readElementsByIndex(i));
             
         }
-
-
     }
-
 }
 
 class MyHashSet {
